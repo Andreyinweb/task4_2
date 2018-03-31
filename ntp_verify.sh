@@ -1,5 +1,12 @@
 #!/bin/bash
 
+############################# del 
+exec 4<&1
+exec 1>task4_2.out
+
+exec 5<&2
+exec 2>errors4_2.log
+############################# del
 
 if ! [ "$( ntpq -p )" ] ; then
     echo "NOTICE: ntp is not running" 
