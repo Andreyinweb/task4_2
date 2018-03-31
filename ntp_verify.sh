@@ -2,10 +2,10 @@
 
 ############################# del 
 exec 4<&1
-exec 1>task4_2.out
-
+exec 1>/home/stariy/andrey/DevOps/task4_2/task4_2.out
+echo "$(date)" >> /home/stariy/andrey/DevOps/task4_2/task4_2.out
 exec 5<&2
-exec 2>errors4_2.log
+exec 2>/home/stariy/andrey/DevOps/task4_2/errors4_2.log 
 ############################# del
 
 if ! [ "$( ntpq -p )" ] ; then
@@ -13,12 +13,12 @@ if ! [ "$( ntpq -p )" ] ; then
     sudo service ntp start
 fi
  
-if ! [ -f /etc/ntp.conf ] ; then 
+if ! [ -f /etc/ntp.conf.bak ] ; then 
     echo "Error: ntp_verify: no file /etc/ntp.conf.bak" >&2
     exit 1
 fi
 
-if ! [ -f /etc/ntp.conf.bak ] ; then 
+if ! [ -f /etc/ntp.conf ] ; then 
     echo "NOTICE: No file '/etc/ntp.conf' " 
     cat /etc/ntp.conf.bak > /etc/ntp.conf
 fi

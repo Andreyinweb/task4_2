@@ -7,8 +7,7 @@ wayprog=$(pwd)
 
 indpkg=$( dpkg --get-selections | grep -m 1 'ntp' | awk '{print $2}' )
 if [ -n "$indpkg" ] ; then
-    if [[ "$indpkg" = "install" ]] ; then
-    else
+    if [[ "$indpkg" != "install" ]] ; then
         sudo apt-get -y install ntp
     fi
 else
