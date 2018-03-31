@@ -7,9 +7,7 @@ wayprog=$(pwd)
 
 indpkg=$( dpkg --get-selections | grep -m 1 'ntp' | awk '{print $2}' )
 if [ -n "$indpkg" ] ; then
-    echo " TYT $indpkg "  # del
     if [[ "$indpkg" = "install" ]] ; then
-       echo "DES install " # del
     else
         sudo apt-get -y install ntp
     fi
