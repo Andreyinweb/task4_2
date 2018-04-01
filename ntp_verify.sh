@@ -9,7 +9,7 @@ if ! [ "$( ntpq -p )" ] ; then
 fi
 # Check for ntp.conf.bak Error, exit. Проверка наличия ntp.conf.bak Ошибка, выход.
 if ! [ -f /etc/ntp.conf.bak ] ; then 
-    echo "Error: ntp_verify: no file /etc/ntp.conf.bak" >&2
+    echo "Error: ntp_verify: no file '/etc/ntp.conf.bak' " >&2
     exit 1
 fi
 # Check for ntp.conf. Overwriting. Проверка наличия ntp.conf. Перезапись
