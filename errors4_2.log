@@ -1,0 +1,3 @@
+/home/stariy/andrey/DevOps/task4_2/ntp_verify.sh: строка 11: ntpq: команда не найдена
+sudo: нет tty и не указана программа askpass
+Error: ntp_verify: no file /etc/ntp.conf.bak
