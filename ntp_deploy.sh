@@ -6,7 +6,7 @@ chmod +x ntp_verify.sh
 # Specifies the current folder. Определяет текущую папку
 wayprog=$(pwd)
 # Checks ntp package. Проверяет наличее пакета ntp
-indpkg=$( dpkg --get-selections | grep -m 1 'ntp' | awk '{print $2}' )
+indpkg=$( dpkg --get-selections | grep 'ntp' | grep -m 1 'ntp' | awk '{print $2}' )
 if [ -n "$indpkg" ] ; then
     # Checks if the package is installed. Проверяет установлен ли пакет
     if [[ "$indpkg" != "install" ]] ; then
